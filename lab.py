@@ -124,10 +124,17 @@ def list_1(num):
 
 def matrix(l, w):
     m = [[int(input("Введите элемент матрицы: ")) for j in range(w)] for i in range(l)]
-    for i in m:
-        print(i)
-    m[m.index(max(m))], m[m.index(min(m))] = m[m.index(min(m))], m[m.index(max(m))]
-    for i in m: print(i)
+    print("Исходная матрица:")
+    for row in m:
+        print(row)
+    for i in range(l):
+        row = m[i]
+        max_idx = row.index(max(row))
+        min_idx = row.index(min(row))
+        row[max_idx], row[min_idx] = row[min_idx], row[max_idx]
+    print("Измененная матрица:")
+    for row in m:
+        print(row)
 
 def file_work(input_filename, output_filename):
     try:
