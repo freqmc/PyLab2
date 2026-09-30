@@ -113,7 +113,7 @@ def arrs_work_6(arr_a, arr_b):
 
 def list_1(num):
     count = 0
-    arr = [int(input()) for i in range(num)]
+    arr = [int(input("Введите элемент: ")) for i in range(num)]
     print(arr)
     for i in range(num):
         if arr[i] % 2 == 1:

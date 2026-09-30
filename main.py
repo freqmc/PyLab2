@@ -53,8 +53,8 @@ while True:
                         case '0': break
                         case _: print("Неверный пункт меню")
             case 10:
-                n1 = int(input("Размер массива a"))
-                n2 = int(input("Размер массива b"))
+                n1 = int(input("Размер массива a: "))
+                n2 = int(input("Размер массива b: "))
                 a = [int(input("Введите элемент а:")) for i in range(n1)]
                 b = [int(input("Введите элемент b:")) for i in range(n2)]
                 while True:
@@ -77,7 +77,7 @@ while True:
                         case 0: break
                         case _: print("Неверный пункт меню")
 
-            case 11: list_1()
+            case 11: list_1(num=int(input("Введите размер массива: ")))
             case 12: matrix(l=int(input("Длина матрицы: ")), w=int(input("Ширина матрицы: ")))
             case 13: file_work(input_filename=input("Введите имя файла, где лежат пароли (c .txt): "), output_filename=input("Введите имя файла отчёта о паролях (с .txt): "))
             case 0:
