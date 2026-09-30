@@ -11,14 +11,19 @@ def pwd_check(pwd):
         print(error)
 
 def calc(a, b, op):
-    match op:
-        case "+": print(f"Значение выражения a+b вычислено при a={a}, b={b}\nРезультат равен {a+b}")
-        case "-": print(f"Значение выражения a-b вычислено при a={a}, b={b}\nРезультат равен {a-b}")
-        case "*": print(f"Значение выражения a*b вычислено при a={a}, b={b}\nРезультат равен {round(a*b, 1)}")
-        case "/":
-            if b == 0: print("Делить на 0 нельзя")
-            else: print(f"Значение выражения a/b вычислено при a={a}, b={b}\nРезультат равен {round(a/b, 1)}")
-        case _: print("Неизвестная операция")
+    try:
+        match op:
+            case "+": print(f"Значение выражения a+b вычислено при a={a}, b={b}\nРезультат равен {a+b}")
+            case "-": print(f"Значение выражения a-b вычислено при a={a}, b={b}\nРезультат равен {a - b}")
+            case "*": print(f"Значение выражения a*b вычислено при a={a}, b={b}\nРезультат равен {round(a * b, 1)}")
+            case "/":
+                try:
+                    print(f"Значение выражения a/b вычислено при a={a}, b={b}\nРезультат равен {round(a / b, 1)}")
+                except ZeroDivisionError:
+                    print("Деление на ноль невозможно")
+            case _: print("Неизвестная операция")
+    except ValueError:
+        print("Введены некорректные данные")
 
 def print7():
     for i in range(0, 501, 7):
