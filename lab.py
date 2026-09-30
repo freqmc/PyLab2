@@ -64,8 +64,10 @@ def add_product(dict, product_name, cost):
     print(f"Товар {product_name} добавлен со стоимостью {cost} руб.")
 
 def del_product(dict, product_name):
-    del dict[product_name]
-    print(f"Товар {product_name} удалён")
+    if product_name in dict:
+        del dict[product_name]
+        print(f"Товар {product_name} удалён")
+    else: print("Нет такого товара.")
 
 def product_count(dict):
     print(f"Всего {len(dict)} товаров")
